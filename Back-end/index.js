@@ -13,7 +13,11 @@ const Jwt = require("jsonwebtoken");
 const Jwtkey = "sujiprogrammer";
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:["https://pentart-app.vercel.app"],
+  methods:["GET","PUT","POST","DELETE"],
+  credentials:true
+}));
 app.use("/uploads", express.static("uploads"));
 connectMongoDB();
 app.post("/signup", async (req, resp) => {
