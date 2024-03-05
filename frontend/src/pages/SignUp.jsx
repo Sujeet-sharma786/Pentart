@@ -30,7 +30,7 @@ const SignUp = () => {
       return false;
     }
 
-    let data = await fetch("http://127.0.0.1:5000/signupcheck", {
+    let data = await fetch("https://pentart-app.vercel.app/signupcheck", {
       method: "post",
       body: JSON.stringify({ email }),
       headers: {
@@ -43,7 +43,7 @@ const SignUp = () => {
     if (data.email) {
       alert("email already registered, try another one");
     } else if (!data.email) {
-      let result = await fetch("http://127.0.0.1:5000/signup", {
+      let result = await fetch("https://pentart-app.vercel.app/signup", {
         method: "post",
         body: JSON.stringify({ name, email, password }),
         headers: {
@@ -57,7 +57,7 @@ const SignUp = () => {
       // localStorage.setItem('token', JSON.stringify(result.auth));
       navigate("/");
     } else {
-      let result = await fetch("http://127.0.0.1:5000/signup", {
+      let result = await fetch("https://pentart-app.vercel.app/signup", {
         method: "post",
         body: JSON.stringify({ name, email, password }),
         headers: {

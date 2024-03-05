@@ -11,7 +11,7 @@ const Admin = () => {
 
   const collectAdmin = async () => {
     console.log(username, password);
-    let result = await fetch("http://localhost:5000/admin", {
+    let result = await fetch("https://pentart-app.vercel.app/admin", {
       method: "post",
       body: JSON.stringify({ username, password }),
       headers: {

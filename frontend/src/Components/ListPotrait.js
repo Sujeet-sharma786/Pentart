@@ -16,7 +16,7 @@ const ShowPotraits = () => {
 
   const getPotrait = () => {
     axios
-      .get("http://localhost:5000/potrait")
+      .get("https://pentart-app.vercel.app/potrait")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err, "error has occured"));
   };
@@ -27,7 +27,7 @@ const ShowPotraits = () => {
     let key = event.target.value;
     console.log(key);
     if (key) {
-      let result = await fetch(`http://localhost:5000/search/${key}`);
+      let result = await fetch(`https://pentart-app.vercel.app/search/${key}`);
       result = await result.json();
       if (result) {
         setData(result);
@@ -55,7 +55,7 @@ const ShowPotraits = () => {
     console.log(myURL);
 
     axios({
-      url: "http://localhost:5000/download",
+      url: "https://pentart-app.vercel.app/download",
       method: "POST",
       responseType: "blob",
       data: JSON.stringify({ myURL }),
@@ -67,7 +67,7 @@ const ShowPotraits = () => {
       fileDownload(resp.data, "downloaded123.png");
     });
 
-    let result = await fetch("http://localhost:5000/download", {
+    let result = await fetch("https://pentart-app.vercel.app/download", {
       method: "post",
       responseType: "blob",
     });
@@ -124,7 +124,7 @@ const ShowPotraits = () => {
                   <div>
                     {/* <h3 className='name-h3'>{singledata?.name}</h3> */}
                     <img
-                      src={`http://localhost:5000/${singledata?.imgUrl}`}
+                      src={`https://pentart-app.vercel.app/${singledata?.imgUrl}`}
                       alt="..."
                       width="150"
                     />

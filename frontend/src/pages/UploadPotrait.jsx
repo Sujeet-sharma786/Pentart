@@ -31,7 +31,7 @@ const ImageControle = () => {
     formdata.append("desc", desc);
     formdata.append("image", image);
     axios
-      .post(`http://localhost:5000/upload/${params}`, formdata, {
+      .post(`https://pentart-app.vercel.app/upload/${params}`, formdata, {
         headers: { Authorization: localStorage.getItem("token") },
       })
       .then((res) => {
@@ -50,13 +50,16 @@ const ImageControle = () => {
 
   const DeletePic = async () => {
     console.log(name);
-    let data = await fetch(`http://localhost:5000/remove/${params.id}`, {
-      method: "DELETE",
-      body: JSON.stringify({ name }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let data = await fetch(
+      `https://pentart-app.vercel.app/remove/${params.id}`,
+      {
+        method: "DELETE",
+        body: JSON.stringify({ name }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     data = await data.json();
     console.log(data);

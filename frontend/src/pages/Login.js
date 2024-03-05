@@ -21,7 +21,7 @@ const Login = () => {
   const collectData = async () => {
     console.log(email, password);
 
-    let result = await fetch("http://127.0.0.1:5000/login", {
+    let result = await fetch("https://pentart-app.vercel.app/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
       headers: {
