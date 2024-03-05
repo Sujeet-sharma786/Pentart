@@ -40,38 +40,6 @@ const Login = () => {
     }
   };
   return (
-    // <div className="login-container">
-    //   <div className="login-register">
-    //     <div className="lock-icon">
-    //       <FaLockOpen />
-    //     </div>
-    //     <h1>Login</h1>
-    //     <input
-    //       className="SignupBox"
-    //       type="text"
-    //       value={email}
-    //       onChange={(e) => setEmail(e.target.value)}
-    //       placeholder="Enter your email"
-    //     />
-    //     <input
-    //       className="SignupBox"
-    //       type="password"
-    //       value={password}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       placeholder="Enter your password"
-    //     />
-    //     {error && (
-    //       <span className="invalid-input">invalid username or password</span>
-    //     )}
-    //     <button onClick={collectData} className="btn" type="button">
-    //       Login
-    //     </button>
-    //   </div>
-    //   <div className="login-welcome">
-    //     <h1>Welcome Back!</h1>
-    //   </div>
-    //   <ToastContainer />
-    // </div>
     <div id="wrapper">
       <div class="main-content">
         <div class="header">
